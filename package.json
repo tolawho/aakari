@@ -1,0 +1,42 @@
+{
+    "name": "aakari",
+    "description": "A Simple Bootstrap 4 Ghost Theme.",
+    "demo": "https://aakari.vasanthdeveloper.com",
+    "version": "1.0.0",
+    "license": "CC-BY-3.0",
+    "bugs": "https://github.com/vasanthdeveloper/aakari/issues",
+    "author": {
+        "name": "Vasanth Srivatsa",
+        "email": "vasanthdevelopers@gmail.com",
+        "url": "https://vasanthdeveloper.com"
+    },
+    "engines": {
+        "ghost": ">=2.0.0"
+    },
+    "gpm": {
+        "type": "theme",
+        "categories": [
+            "Minimal",
+            "Personal Blog"
+        ]
+    },
+    "keywords": [
+        "ghost",
+        "theme",
+        "ghost-theme",
+        "vasanthdeveloper",
+        "vasanth-srivatsa"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/vasanthdeveloper/aakari.git"
+    },
+    "scripts": {
+        "dev": "gulp",
+        "zip": "gulp zip",
+        "test": "gscan ."
+    },
+    "config": {
+        "posts_per_page": 25
+    }
+}

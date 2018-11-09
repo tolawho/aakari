@@ -1,0 +1,5 @@
+# Ignore the package-lock.json created by nodeJS
+package-lock.json
+
+# Ignore the node_modules folder where third-party modules fall in
+node_modules
