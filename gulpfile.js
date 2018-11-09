@@ -5,7 +5,8 @@ const gulp = require('gulp'),
 	  sourcemaps = require('gulp-sourcemaps'),
 	  autoprefixer = require('gulp-autoprefixer'),
 	  csso = require('gulp-csso'),
-	  uglify = require('gulp-uglify');
+	  uglify = require('gulp-uglify'),
+	  zip = require('gulp-zip');
 
 // Setting the sass compiler as node-sass
 sass.compiler = require('node-sass');
@@ -23,6 +24,15 @@ var ReqJavaScripts = [
 	'./node_modules/jquery/dist/jquery.min.js',
 	'./node_modules/popper.js/dist/umd/popper.min.js',
 	'./node_modules/bootstrap/dist/js/bootstrap.min.js'
+];
+
+// Defining unnecessary files for packaging
+var unFilesForPack = [
+	'**',
+	'!sources', '!sources/**',
+	'!node_modules', '!node_modules/**',
+	'!dist', '!dist/**',
+	'!gulpfile.js', '!package.json', '!package-lock.json'
 ];
 
 // The Gulp task for preparing CSS
@@ -50,5 +60,14 @@ gulp.task('install-javascripts', function() {
 });
 
 // Gulp task for packaging the theme into a ZIP file
+gulp.task('package', function() {
+	var targetDir = 'dist/';
+	var themeName = require('./package.json').name;
+	var filename = themeName + '.zip';
+
+	return gulp.src(unFilesForPack)
+		.pipe(zip(filename))
+		.pipe(gulp.dest(targetDir));
+});
 
 // The default Gulp task which first does a fresh build and watches for any changes
