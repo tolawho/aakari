@@ -4,7 +4,8 @@ const gulp = require('gulp'),
 	  sass = require('gulp-sass'),
 	  sourcemaps = require('gulp-sourcemaps'),
 	  autoprefixer = require('gulp-autoprefixer'),
-	  csso = require('gulp-csso');
+	  csso = require('gulp-csso'),
+	  uglify = require('gulp-uglify');
 
 // Setting the sass compiler as node-sass
 sass.compiler = require('node-sass');
@@ -16,6 +17,13 @@ var SassOptions = {
 	indentWidth: 4,
 	outputStyle: 'expanded'
 };
+
+// Defining the required JavaScripts
+var ReqJavaScripts = [
+	'./node_modules/jquery/dist/jquery.min.js',
+	'./node_modules/popper.js/dist/umd/popper.min.js',
+	'./node_modules/bootstrap/dist/js/bootstrap.min.js'
+];
 
 // The Gulp task for preparing CSS
 gulp.task('sass-compile', function() {
@@ -29,6 +37,17 @@ gulp.task('sass-compile', function() {
 });
 
 // Gulp Task for optimizing JavaScripts
+gulp.task('js-optimize', function() {
+	return gulp.src('./sources/js/**/*.js')
+		.pipe(uglify())
+		.pipe(gulp.dest('./assets/js'));
+})
+
+// Gulp Task for installing the required JavaScripts
+gulp.task('install-javascripts', function() {
+	return gulp.src(ReqJavaScripts)
+		.pipe(gulp.dest('./assets/js'));
+});
 
 // Gulp task for packaging the theme into a ZIP file
 

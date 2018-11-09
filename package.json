@@ -46,6 +46,9 @@
         "gulp-csso": "^3.0.1",
         "gulp-sass": "^4.0.2",
         "gulp-sourcemaps": "^2.6.4",
-        "node-sass": "^4.10.0"
+        "gulp-uglify": "^3.0.1",
+        "jquery": "^3.3.1",
+        "node-sass": "^4.10.0",
+        "popper.js": "^1.14.5"
     }
 }
