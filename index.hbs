@@ -2,8 +2,18 @@
 {{!-- The tag above means: insert everything in this file
 into the {body} of the default.hbs template --}}
 
-{{!-- This tag will output latest posts --}}
-{{> "posts-list"}}
+{{!-- Get the number of posts given in package.json from Ghost API --}}
+<main role="main" id="posts-section" class="posts-section">
+	<div class="posts-container">
+		{{#get "posts" limit=@config.posts_per_page include="tags,authors"}}
+		{{!-- Loop through each blog post --}}
+		{{#foreach posts}}
+			{{!-- Use our template to format the recived data --}}
+			{{> "posts-list"}}
+		{{/foreach}}
+		{{/get}}
+	</div>
+</main>
 
 {{!-- This tag will output the footer --}}
 {{> "footer"}}
