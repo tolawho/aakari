@@ -1,2 +1,29 @@
-{{!-- The default template --}}
-{{!-- [TODO]: This will later be updated with a HTML boiler plate --}}
+<!DOCTYPE html>
+<html lang="{{lang}}">
+<head>
+	{{!-- Document Settings --}}
+	<meta charset="UTF-8">
+	<meta name="HandheldFriendly" content="True">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	{{!-- Base Meta --}}
+	<title>{{meta_title}}</title>
+
+	{{!-- Styles, Fonts and Icons --}}
+	<link rel="stylesheet" href="{{asset 'css/aakari.css'}}">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,600">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+</head>
+<body class="{{body_class}}">
+	
+	{{!-- JQuery for adding shadow to navbar --}}
+	<script type="text/javascript">
+		$(window).scroll(function() {
+		  var offset = $(window).scrollTop();
+		  console.log(offset);
+		  $('.navbar').toggleClass('shadow', offset > 50);
+		});
+	</script>
+</body>
+</html>
