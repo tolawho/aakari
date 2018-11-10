@@ -2,5 +2,11 @@
 {{!-- The tag above means: insert everything in this file
 into the {body} of the default.hbs template --}}
 
+{{!-- This tag will output latest posts --}}
+{{> "posts-list"}}
+
+{{!-- This tag will output the footer --}}
+{{> "footer"}}
+
 {{!-- This tag will output the required JavaScripts for all pages --}}
 {{> "inject-js"}}

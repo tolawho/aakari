@@ -96,3 +96,25 @@ $link-hover-decoration: none;
 // ######################################
 // ##           Customization          ##
 // ######################################
+
+// Make the body adjust with fixed navbar
+body {
+	min-height: 110vh;
+	padding-top: 72px;
+}
+
+// Navigation Styles
+.navbar {
+	transition: 0.5s box-shadow;
+}
+
+// Limit the size of the logo
+.nav-logo {
+	max-height: 20px;
+}
+
+// Importing post list styles
+@import "./post-list";
+
+// Importing footer styles
+@import "./footer";

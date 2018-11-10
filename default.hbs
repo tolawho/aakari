@@ -15,16 +15,13 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,600">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
 </head>
-<body class="{{body_class}}">
+<body>
 	{{!-- This tag will output the navigation bar --}}
 	{{navigation}}
 
 	{{!-- This tag will output the topics bar --}}
 	{{> "topics-bar"}}
 
-	{{!-- This tag will output the footer --}}
-	{{> "footer"}}
-	
 	{{!-- This tag will be replaced by the actual content of the page --}}
 	{{{body}}}
 </body>

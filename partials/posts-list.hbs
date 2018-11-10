@@ -1,0 +1,27 @@
+<main role="main" id="posts-section" class="posts-section">
+	<div class="posts-container">
+		{{!-- Get the number of posts given in package.json from Ghost API --}}
+		{{#get "posts" limit=@config.posts_per_page include="tags,authors"}}
+
+		{{!-- Loop through each blog post --}}
+		{{#foreach posts}}
+		<article class="{{post_class}}">
+			<a href="{{url absolute='true'}}" class="post-title width-container text-dark"><h2>{{title}}</h2></a>
+			<div class="post-meta">
+				{{#primary_author}}
+				<img class="post-authorimg" src="{{img_url profile_image absolute='true'}}" alt="{{name}}">
+				<p class="post-meta-authorcat"><a href="{{url absolute='true'}}">{{name}}</a>{{/primary_author}}
+				{{#if primary_tag}} on <a href="/tag/{{primary_tag.slug}}">{{primary_tag.name}}</a>{{/if}}</p>
+				<p class="post-meta-sep">•</p>
+				<p class="post-meta-datetime">{{date published_at format="MMMM DD, YYYY"}}</p>
+			</div>
+			<div class="post-img shadow-sm lazy" data-src="{{img_url feature_image absolute='true'}}"></div>
+			<p class="post-excerpt">{{excerpt characters="340"}}</p>
+			<p><a href="{{url absolute='true'}}">Read More <i class="fas fa-long-arrow-alt-right"></i></a></p>
+			<hr class="post-sep">
+		</article>
+		{{/foreach}}
+
+		{{/get}}
+	</div>
+</main>
