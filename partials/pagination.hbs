@@ -1,0 +1,15 @@
+<div class="pageination-section text-center">
+	<div class="row">
+		<div class="col-sm">
+			{{#if next}}
+			<a href="{{page_url next}}" class="next"><i class="fas fa-long-arrow-alt-left"></i> Load next</a>
+			{{/if}}
+			<div class="col-sm status text-center">
+				<p>Page {{page}} of {{pages}}</p>
+			</div>
+			{{#if prev}}
+			<a href="{{page_url prev}}" class="previous">Load previous <i class="fas fa-long-arrow-alt-right"></i></a>
+			{{/if}}
+		</div>
+	</div>
+</div>

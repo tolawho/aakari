@@ -24,17 +24,23 @@ into the {body} of the default.hbs template --}}
 </section>
 
 {{!-- Get the posts given in package.json from Ghost API form the following author --}}
+{{#get "posts" limit=@config.posts_per_page include="tags,authors" filter="primary_author:{{slug}}"}}
+
 <main role="main" id="posts-section" class="posts-section bg-light">
 	<div class="posts-container">
-		{{#get "posts" limit=@config.posts_per_page include="tags,authors" filter="primary_author:{{slug}}"}}
 		{{!-- Loop through each blog post --}}
 		{{#foreach posts}}
 			{{!-- Use our template to format the recived data --}}
 			{{> "posts-list"}}
 		{{/foreach}}
-		{{/get}}
 	</div>
 </main>
+
+{{!-- This tag outputs pagination section --}}
+{{pagination}}
+
+{{!-- Finish accessing the posts by get helper --}}
+{{/get}}
 
 {{!-- Finish accessing the author variables --}}
 {{/author}}

@@ -3,17 +3,23 @@
 into the {body} of the default.hbs template --}}
 
 {{!-- Get the number of posts given in package.json from Ghost API --}}
+{{#get "posts" limit=@config.posts_per_page include="tags,authors"}}
+
 <main role="main" id="posts-section" class="posts-section">
 	<div class="posts-container">
-		{{#get "posts" limit=@config.posts_per_page include="tags,authors"}}
 		{{!-- Loop through each blog post --}}
 		{{#foreach posts}}
 			{{!-- Use our template to format the recived data --}}
 			{{> "posts-list"}}
 		{{/foreach}}
-		{{/get}}
 	</div>
 </main>
+
+{{!-- This tag outputs pagination section --}}
+{{pagination}}
+
+{{!-- Finish accessing the posts by get helper --}}
+{{/get}}
 
 {{!-- This tag will output the subscribe form, if enabled --}}
 {{> "subscribe-section"}}
