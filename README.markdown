@@ -29,8 +29,9 @@ git clone --single-branch --branch "mainline" https://github.com/vasanthdevelope
 This would create a new folder in the themes directory. Now, restart the Ghost instance once and apply the theme on your website's Ghost Admin area.
 
 ### Todo
-1. Add a developer guide on wiki about how to work on this theme.
-2. Add an index of which file does what for the theme in wiki.
+1. Add author location on author page
+2. Add a developer guide on wiki about how to work on this theme.
+3. Add an index of which file does what for the theme in wiki.
 
 ### License
 The Aakari Ghost theme is developed and released under the "<a target="_blank" href="https://creativecommons.org/licenses/by/3.0">Creative Commons 3.0</a>" license.
