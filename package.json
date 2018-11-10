@@ -33,7 +33,7 @@
     },
     "scripts": {
         "start": "gulp",
-        "package": "gulp zip",
+        "package": "gulp package",
         "test": "gscan .",
         "clean": "gulp clean"
     },
