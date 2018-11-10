@@ -113,6 +113,16 @@ body {
 	max-height: 20px;
 }
 
+// Make topics bar look better
+.topics-nav {
+	padding: 12px;
+
+	p {
+		display: inline-block;
+		margin: 0px;
+	}
+}
+
 // Importing post list styles
 @import "./post-list";
 
@@ -127,3 +137,6 @@ body {
 
 // Importing footer styles
 @import "./footer";
+
+// Importing the responsive style sheets
+@import "./responsive";
