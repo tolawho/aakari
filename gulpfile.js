@@ -22,7 +22,8 @@ var SassOptions = {
 var ReqJavaScripts = [
 	'./node_modules/jquery/dist/jquery.min.js',
 	'./node_modules/popper.js/dist/umd/popper.min.js',
-	'./node_modules/bootstrap/dist/js/bootstrap.min.js'
+	'./node_modules/bootstrap/dist/js/bootstrap.min.js',
+	'./node_modules/jquery-lazy/jquery.lazy.min.js'
 ];
 
 // Defining unnecessary files for packaging
