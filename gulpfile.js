@@ -15,9 +15,6 @@ sass.compiler = require('node-sass');
 
 // Setting SASS compiler settings
 var SassOptions = {
-	indentedSyntax: true,
-	indentType: 'tab',
-	indentWidth: 4,
 	outputStyle: 'expanded'
 };
 
