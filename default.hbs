@@ -14,6 +14,9 @@
 	<link rel="stylesheet" href="{{asset 'css/aakari.css'}}">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,600">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+
+	{{!-- This tag outputs SEO meta structured data and other important settings --}}
+    {{ghost_head}}
 </head>
 <body>
 	{{!-- This tag will output the navigation bar --}}
@@ -24,5 +27,8 @@
 
 	{{!-- This tag will be replaced by the actual content of the page --}}
 	{{{body}}}
+
+	{{!-- Ghost outputs important scripts and data with this tag --}}
+	{{ghost_foot}}
 </body>
 </html>
