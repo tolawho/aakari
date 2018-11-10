@@ -8,6 +8,11 @@
 // ##           Configuration          ##
 // ######################################
 
+// Remove the blue outline on focus
+*:focus {
+	outline: 0;
+}
+
 // Hide the scroll bar
 ::-webkit-scrollbar {
 	display: none;

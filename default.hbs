@@ -16,14 +16,10 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
 </head>
 <body class="{{body_class}}">
+	{{!-- This tag will output the navigation bar --}}
+	{{navigation}}
 	
-	{{!-- JQuery for adding shadow to navbar --}}
-	<script type="text/javascript">
-		$(window).scroll(function() {
-		  var offset = $(window).scrollTop();
-		  console.log(offset);
-		  $('.navbar').toggleClass('shadow', offset > 50);
-		});
-	</script>
+	{{!-- This tag will be replaced by the actual content of the page --}}
+	{{{body}}}
 </body>
 </html>
