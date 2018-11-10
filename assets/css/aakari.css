@@ -1,2 +1,8 @@
-
+@charset "UTF-8";
+/*!
+ * Aakari Ghost Theme (https://github.com/vasanthdeveloper/aakari)
+ * Copyright © Vasanth Developer.
+ * Licensed under Creative Commons 3.0 (https://creativecommons.org/licenses/by/3.0)
+ */
+::-webkit-scrollbar{display:none}::-moz-selection{background-color:#d8e8ff}::selection{background-color:#d8e8ff}.btn{font-size:.8rem!important}
 /*# sourceMappingURL=maps/aakari.css.map */

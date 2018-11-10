@@ -1,4 +1,48 @@
-// The main SASS file
-// [TODO]: Will be updated later
+/*!
+ * Aakari Ghost Theme (https://github.com/vasanthdeveloper/aakari)
+ * Copyright © Vasanth Developer.
+ * Licensed under Creative Commons 3.0 (https://creativecommons.org/licenses/by/3.0)
+ */
 
-// For testing purposes only
+// ######################################
+// ##           Configuration          ##
+// ######################################
+
+// Hide the scroll bar
+::-webkit-scrollbar {
+	display: none;
+}
+
+// Set the text selection color
+::selection {
+	background-color: #D8E8FF;
+}
+
+// Set the font size for buttons
+.btn {
+	font-size: 0.8rem !important;
+}
+
+// Fonts
+$font-family-base: 'Poppins', sans-serif;
+
+// Colors
+$light: #FBFDFF;
+$primary: #006CFF;
+$secondary: #263238;
+
+// Buttons
+$btn-border-radius: 20px;
+$btn-padding-y: 7px;
+$btn-padding-x: 15px;
+
+// Anchor
+$link-hover-decoration: none;
+
+// ######################################
+// ##            Bootstrap 4           ##
+// ######################################
+
+// ######################################
+// ##           Customization          ##
+// ######################################
