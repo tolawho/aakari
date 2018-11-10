@@ -1,0 +1,22 @@
+<footer id="footer" class="footer-section text-light bg-primary">
+	<div class="container">
+		<div class="copyrights float-left">
+			<h5 class="footer-logo">{{@blog.title}}</h5><br>
+			{{!-- Replace the above line with the HTML code in the below link for showing the logo instead of text in footer. --}}
+			{{!-- <h5 class="footer-logo"><img src="assets/img/white_logo.png" alt="Vasanth Developer"></h5><br> --}}
+			<p class="footer-copyright">Vasanth Developer &copy; {{date format='YYYY'}}. All Rights Reserved.</p>
+		</div>
+		<ul class="nav footer-nav float-right">
+			{{#if @blog.twitter}}
+			<li class="nav-item">
+				<a class="nav-link" href="{{twitter_url @blog.twitter}}" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
+			</li>
+			{{/if}}
+			{{#if @blog.facebook}}
+			<li class="nav-item">
+				<a class="nav-link" href="{{facebook_url @blog.facebook}}" target="_blank" rel="noopener"><i class="fab fa-facebook-square"></i></a>
+			</li>
+			{{/if}}
+		</ul>
+	</div>
+</footer>
