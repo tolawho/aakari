@@ -15,27 +15,20 @@ into the {body} of the default.hbs template --}}
 	{{/if}}
 </section>
 
-{{!-- Get the posts given in package.json from Ghost API from the following tag --}}
-{{#get "posts" limit=@config.posts_per_page include="tags,authors" filter="primary_tag:{{slug}}"}}
+{{!-- Finish accessing the tag variables --}}
+{{/tag}}
 
 <main role="main" id="posts-section" class="posts-section bg-light">
 	<div class="posts-container">
 		{{!-- Loop through each blog post --}}
-		{{#foreach posts}}
+		{{#foreach posts limit=@config.posts_per_page}}
 			{{!-- Use our template to format the recived data --}}
 			{{> "posts-list"}}
 		{{/foreach}}
+		{{!-- This tag outputs pagination section --}}
+		{{pagination}}
 	</div>
 </main>
-
-{{!-- This tag outputs pagination section --}}
-{{pagination}}
-
-{{!-- Finish accessing the posts by get helper --}}
-{{/get}}
-
-{{!-- Finish accessing the tag variables --}}
-{{/tag}}
 
 {{!-- This tag will output the subscribe form, if enabled --}}
 {{> "subscribe-section"}}

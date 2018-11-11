@@ -23,8 +23,8 @@ into the {body} of the default.hbs template --}}
 	</div>
 </section>
 
-{{!-- Get the posts given in package.json from Ghost API form the following author --}}
-{{#get "posts" limit=@config.posts_per_page include="tags,authors" filter="primary_author:{{slug}}"}}
+{{!-- Finish accessing the author variables --}}
+{{/author}}
 
 <main role="main" id="posts-section" class="posts-section bg-light">
 	<div class="posts-container">
@@ -33,17 +33,11 @@ into the {body} of the default.hbs template --}}
 			{{!-- Use our template to format the recived data --}}
 			{{> "posts-list"}}
 		{{/foreach}}
+
+		{{!-- This tag outputs pagination section --}}
+		{{pagination}}
 	</div>
 </main>
-
-{{!-- This tag outputs pagination section --}}
-{{pagination}}
-
-{{!-- Finish accessing the posts by get helper --}}
-{{/get}}
-
-{{!-- Finish accessing the author variables --}}
-{{/author}}
 
 {{!-- This tag will output the subscribe form, if enabled --}}
 {{> "subscribe-section"}}
