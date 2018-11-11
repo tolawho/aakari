@@ -24,9 +24,11 @@ into the {body} of the default.hbs template --}}
 					<hr>
 					<p class="share-title">Share this article:</p>
 					<div class="share-buttons">
-						<button type="button" class="btn btn-primary"><i class="fab fa-twitter"></i></button>
-						<button type="button" class="btn btn-primary"><i class="fab fa-facebook-square"></i></button>
-						<button type="button" class="btn btn-primary"><i class="fab fa-reddit-alien"></i></button>
+						<a href="https://twitter.com/share?text={{encode title}}&amp;url={{url absolute='true'}}" target="_blank" rel="noopener" class="btn btn-primary" onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;"><i class="fab fa-twitter"></i></a>
+
+						<a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute='true'}}" target="_blank" rel="noopener" class="btn btn-primary" onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;"><i class="fab fa-facebook-square"></i></a>
+
+						<a href="https://www.reddit.com/submit?title={{encode title}}&amp;url={{url absolute='true'}}" target="_blank" rel="noopener" class="btn btn-primary"><i class="fab fa-reddit-alien"></i></a>
 					</div>
 				</div>
 
