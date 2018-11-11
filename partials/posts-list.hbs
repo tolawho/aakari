@@ -11,5 +11,8 @@
 	<div class="post-img shadow-sm lazy" data-src="{{img_url feature_image absolute='true'}}"></div>
 	<p class="post-excerpt">{{excerpt characters="340"}}</p>
 	<p><a href="{{url absolute='true'}}">Read More <i class="fas fa-long-arrow-alt-right"></i></a></p>
-	<hr class="post-sep">
+	{{#if @last}}
+	{{else}}
+	<hr>
+	{{/if}}
 </article>
