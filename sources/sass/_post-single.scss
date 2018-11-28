@@ -1,4 +1,6 @@
 .post-content {
+	font-family: 'Open Sans', sans-serif;
+
 	p:nth-child(1) {
 		// Increase the size of first paragraph
 		font-size: 1.5rem;
@@ -11,6 +13,7 @@
 	h1, h2, h3, h4, h5, h6 {
 		font-weight: 600;
 		padding-bottom: 5px;
+		font-family: 'Poppins', sans-serif;
 	}
 
 	pre {

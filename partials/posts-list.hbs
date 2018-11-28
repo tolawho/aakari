@@ -2,7 +2,7 @@
 	<a href="{{url absolute='true'}}" class="post-title width-container text-dark"><h2>{{title}}</h2></a>
 	<div class="post-meta">
 		{{#primary_author}}
-		<img class="post-authorimg" src="{{img_url profile_image absolute='true'}}" alt="{{name}}">
+		{{#if profile_image}}<img class="post-authorimg" src="{{img_url profile_image absolute='true'}}" alt="{{name}}">{{/if}}
 		<p class="post-meta-authorcat"><a href="{{url absolute='true'}}">{{name}}</a>{{/primary_author}}
 		{{#if primary_tag}} on <a href="/tag/{{primary_tag.slug}}">{{primary_tag.name}}</a>{{/if}}</p>
 		<p class="post-meta-sep">•</p>
