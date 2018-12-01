@@ -1,7 +1,7 @@
 <p align="center" style="text-align: center !important;">
 	<img src="https://github.com/vasanthdeveloper/aakari/blob/76a11a3f2fcf345b93461e7be6435dfe2d133355/logotype.png?raw=true" height="50px" alt="Aakari">
 	<p align="center">( आकरी ) - A Simple Bootstrap 4 Ghost Theme</p>
-	<p align="center"><strong><a target="_blank" rel="noopener" href="https://github.com/vasanthdeveloper/aakari/tree/preview-images">Preview</a> | <a target="_blank" rel="noopener" href="https://github.com/vasanthdeveloper/aakari/releases/download/v1.2.0/aakari.zip">Download</a></strong></p>
+	<p align="center"><strong><a target="_blank" rel="noopener" href="https://vasanthdeveloper.github.io/aakari">Preview</a> | <a target="_blank" rel="noopener" href="https://github.com/vasanthdeveloper/aakari/releases/download/v1.2.0/aakari.zip">Download</a></strong></p>
 	<img src="https://raw.githubusercontent.com/vasanthdeveloper/aakari/preview-images/preview_main.png" alt="Aakari Ghost Theme"><br><br>
 </p>
 
@@ -24,9 +24,9 @@ git clone --single-branch --branch "mainline" https://github.com/vasanthdevelope
 This would create a new folder in the themes directory. Now, restart the Ghost instance once and apply the theme on your website's Ghost Admin area.
 
 ### 💻 Preview
-High resolution preview images are frequently updated on the ```preview-images``` branch of this repository. Clicking on the below link will take you there.
+A frequently updated static site generated from Ghost running the Aakari theme is available for preview purposes. By clicking on the link below, you will be taken to the preview site.
 
-**[View Preview Images](https://github.com/vasanthdeveloper/aakari/tree/preview-images)**
+**[Show Preview](https://vasanthdeveloper.github.io/aakari)**
 
 ### 🔨 Libraries
 1. Bootstrap 4 (Main style sheet, Slightly modified)
