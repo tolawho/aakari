@@ -1,6 +1,6 @@
 <p align="center" style="text-align: center !important;">
 	<img src="https://github.com/vasanthdeveloper/aakari/blob/76a11a3f2fcf345b93461e7be6435dfe2d133355/logotype.png?raw=true" height="50px" alt="Aakari">
-	<p align="center">( आकरी ) - A Simple Bootstrap 4 Ghost Theme</p>
+	<p align="center">( आकारी ) - A Simple Bootstrap 4 Ghost Theme</p>
 	<p align="center"><strong><a target="_blank" rel="noopener" href="https://vasanthdeveloper.github.io/aakari">Preview</a> | <a target="_blank" rel="noopener" href="https://github.com/vasanthdeveloper/aakari/releases/download/v1.2.0/aakari.zip">Download</a></strong></p>
 	<img src="https://raw.githubusercontent.com/vasanthdeveloper/aakari/preview-images/preview_main.png" alt="Aakari Ghost Theme"><br><br>
 </p>
