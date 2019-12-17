@@ -1,4 +1,9 @@
-'use strict';
+//   ___    __________   |  Vasanth Developer (Vasanth Srivatsa)
+//   __ |  / /___  __ \  |  ------------------------------------------------
+//   __ | / / __  / / /  |  https://github.com/vasanthdeveloper/kevala.git
+//   __ |/ /  _  /_/ /   |
+//   _____/   /_____/    |  Gulp instructions for building aakari Ghost theme
+//                       |
 
 const gulp = require('gulp'),
 	  sass = require('gulp-sass'),
