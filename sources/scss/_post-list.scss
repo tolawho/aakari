@@ -1,5 +1,5 @@
 .posts-section {
-	padding-top: 30px;
+	padding-top: 50px;
 	padding-bottom: 30px;
 }
 
@@ -13,6 +13,7 @@
 	font-weight: 700;
     margin: 60px 0px 0px 0px;
     line-height: 29px;
+    color: var(--text-color);
 }
 
 .post-meta {
@@ -45,12 +46,13 @@
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center center;
-	background-color: white;
+	background-color: var(--theme);
 }
 
 .post-excerpt {
 	opacity: 0.6;
-	font-family: 'Open Sans', sans-serif;
+    font-family: var(--font-normal);
+    font-size: 1.2rem;
 }
 
 .pageination-section {

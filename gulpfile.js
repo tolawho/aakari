@@ -112,7 +112,8 @@ function watch(callback) {
     // Watch for file changes
     gulp.watch(globs.styles, styles);
     gulp.watch(globs.scripts, scripts);
-    gulp.watch(globs.markup).on('change', (styles, livereload.changed));
+    gulp.watch(globs.markup, styles);
+    gulp.watch(globs.markup).on('change', livereload.changed);
     gulp.watch('./assets/**/*').on('change', livereload.reload);
 
     // Tell gulp to continue with this function

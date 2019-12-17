@@ -38,7 +38,8 @@
         "build": "gulp build",
         "package": "gulp package",
         "clean": "gulp clean",
-        "docker": "bash './scripts/docker.bash'"
+        "docker": "bash './scripts/docker.bash'",
+        "publish": "bash './scripts/publish.bash'"
     },
     "config": {
         "posts_per_page": 6

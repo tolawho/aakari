@@ -19,11 +19,13 @@
     {{ghost_head}}
 </head>
 <body>
-	{{!-- This tag will output the navigation bar --}}
-	{{navigation}}
+	<div id="header" class="shadow">
+        {{!-- This tag will output the navigation bar --}}
+        {{navigation}}
 
-	{{!-- This tag will output the topics bar --}}
-	{{> "topics-bar"}}
+        {{!-- This tag will output the topics bar --}}
+        {{> "topics-bar"}}
+    </div>
 
 	{{!-- This tag will be replaced by the actual content of the page --}}
 	{{{body}}}

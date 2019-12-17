@@ -1,6 +1,6 @@
 // Navigation Styles
 .navbar {
-	transition: 0.5s box-shadow;
+    background-color: var(--theme);
 }
 
 .navbar-brand {
@@ -11,9 +11,23 @@
     font-weight: 500;
 }
 
+.navbar-nav a {
+    color: var(--text-color);
+}
+
 // Limit the size of the logo
 .nav-logo {
 	max-height: 20px;
+}
+
+.social > * {
+    color: var(--text-color);
+    margin: 0px 0.4rem;
+    cursor: pointer;
+}
+
+.social > *:hover {
+    color: var(--text-color);
 }
 
 // Make topics bar look better
@@ -23,5 +37,5 @@
 	p {
 		display: inline-block;
 		margin: 0px;
-	}
+    }
 }
