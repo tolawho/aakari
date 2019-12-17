@@ -1,3 +1,4 @@
 function init() {
-	// [TODO]: Will be updated later
+    // [TODO]: Will be updated later
+    console.log('Development started!');
 }

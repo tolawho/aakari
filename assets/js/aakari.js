@@ -1,1 +1,1 @@
-function init(){}
+function init(){console.log("Development started!")}

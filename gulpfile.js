@@ -5,85 +5,105 @@
 //   _____/   /_____/    |  Gulp instructions for building aakari Ghost theme
 //                       |
 
-const gulp = require('gulp'),
-	  sass = require('gulp-sass'),
-	  sourcemaps = require('gulp-sourcemaps'),
-	  autoprefixer = require('gulp-autoprefixer'),
-	  csso = require('gulp-csso'),
-	  uglify = require('gulp-uglify'),
-	  zip = require('gulp-zip'),
-	  del = require('del'),
-	  runSequence = require('run-sequence');
+const del = require('del');
+const postcss = require('gulp-postcss');
+const gulp = require('gulp');
+const sass = require('gulp-sass');
+const sourcemaps = require('gulp-sourcemaps');
+const uglify = require('gulp-uglify');
+const zip = require('gulp-zip');
+
+const postCSSConfig = require('./postcss.config');
 
 // Setting the sass compiler as node-sass
 sass.compiler = require('node-sass');
 
-// Setting SASS compiler settings
-var SassOptions = {
-	outputStyle: 'expanded'
+// The variable that holds the paths/globs to different files
+const globs = {
+    distDir: './dist',
+    styles: './sources/scss/**/*.scss',
+    scripts: './sources/js/**/*.js',
+    packageFilename: `${require('./package.json').name}-${require('./package.json').version}.zip`,
+    vendorScripts: [
+        './node_modules/jquery/dist/jquery.min.js',
+        './node_modules/popper.js/dist/umd/popper.min.js',
+        './node_modules/bootstrap/dist/js/bootstrap.min.js',
+        './node_modules/jquery-lazy/jquery.lazy.min.js'
+    ],
+    unFilesForPack: [
+        '**',
+        '!sources', '!sources/**',
+        '!node_modules', '!node_modules/**',
+        '!dist', '!dist/**',
+        '!package-lock.json'
+    ]
 };
 
-// Defining the required JavaScripts
-var ReqJavaScripts = [
-	'./node_modules/jquery/dist/jquery.min.js',
-	'./node_modules/popper.js/dist/umd/popper.min.js',
-	'./node_modules/bootstrap/dist/js/bootstrap.min.js',
-	'./node_modules/jquery-lazy/jquery.lazy.min.js'
-];
+// The function that compiles SCSS and passes the CSS through PostCSS
+function styles() {
+    return gulp.src(globs.styles)
+        .pipe(sourcemaps.init())
+        .pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError))
+        .pipe(postcss(postCSSConfig))
+        .pipe(sourcemaps.write('./maps'))
+        .pipe(gulp.dest('./assets/css'));
+}
 
-// Defining unnecessary files for packaging
-var unFilesForPack = [
-	'**',
-	'!sources', '!sources/**',
-	'!node_modules', '!node_modules/**',
-	'!dist', '!dist/**',
-	'!package-lock.json'
-];
+// The function that minifies JavaScript files
+function scripts() {
+    return gulp.src(globs.scripts)
+        .pipe(uglify())
+        .pipe(gulp.dest('./assets/js'));
+}
 
-// The Gulp task for preparing CSS
-gulp.task('sass-compile', function() {
-	return gulp.src('./sources/sass/**/*.+(scss|sass)')
-		.pipe(sourcemaps.init())
-		.pipe(sass(SassOptions).on('error', sass.logError))
-		.pipe(autoprefixer({browsers: ['last 4 versions']}))
-		.pipe(csso())
-		.pipe(sourcemaps.write('./maps'))
-		.pipe(gulp.dest('./assets/css'));
-});
+// The function that installs vendor JavaScript
+function vendor_scripts() {
+    return gulp.src(globs.vendorScripts)
+        .pipe(gulp.dest('./assets/js'));
+}
 
-// Gulp Task for optimizing JavaScripts
-gulp.task('js-optimize', function() {
-	return gulp.src('./sources/js/**/*.js')
-		.pipe(uglify())
-		.pipe(gulp.dest('./assets/js'));
-})
+// The function that packages the theme into a zip file for installation in Ghost
+function package_theme() {
+    return gulp.src(globs.unFilesForPack)
+        .pipe(zip(globs.packageFilename))
+        .pipe(gulp.dest(globs.distDir));
+}
 
-// Gulp Task for installing the required JavaScripts
-gulp.task('install-javascripts', function() {
-	return gulp.src(ReqJavaScripts)
-		.pipe(gulp.dest('./assets/js'));
-});
+// The function that deletes the generated assets
+function clean() {
+    return del([
+        './assets',
+        './dist'
+    ]);
+}
 
-// Gulp task for packaging the theme into a ZIP file
-gulp.task('package', function() {
-	var targetDir = 'dist/';
-	var themeName = require('./package.json').name;
-	var filename = themeName + '.zip';
+// The function that watches for file changes and re-builds the changed sources
+function watch(callback) {
+    // [TODO]: Configure the live reloading server
 
-	return gulp.src(unFilesForPack)
-		.pipe(zip(filename))
-		.pipe(gulp.dest(targetDir));
-});
+    // Watch for file changes
+    gulp.watch(globs.styles, styles);
+    gulp.watch(globs.scripts, scripts);
+    // gulp.watch(globs.markup).on('change', (styles, livereload.changed));
 
-// Gulp task for cleaning the assets directory
-gulp.task('clean', function() {
-	return del.sync(['./assets', './dist']);
-});
+    // Tell gulp to continue with this function
+    callback();
+}
 
-// The default Gulp task which first does a fresh build and watches for any changes
-gulp.task('default', ['clean'], function() {
-	runSequence('sass-compile', 'js-optimize', 'install-javascripts');
+// The Gulp task that freshly builds all the assets
+gulp.task('build', gulp.series(clean, gulp.parallel(
+    styles,
+    scripts,
+    vendor_scripts
+)));
 
-	gulp.watch('./sources/sass/**/*.+(scss|sass)', ['sass-compile']);
-	gulp.watch('./sources/js/**/*.js', ['js-optimize']);
-});
+// The Gulp task that does a fresh build and keeps watching for any changes
+gulp.task('default', gulp.series('build', watch));
+
+// Export the function that are used by Gulp
+exports.clean = clean;
+exports.vendor_scripts = vendor_scripts;
+exports.scripts = scripts;
+exports.styles = styles;
+exports.package = package_theme;
+exports.watch = watch;
