@@ -106,25 +106,7 @@ body {
 	padding-top: 72px;
 }
 
-// Navigation Styles
-.navbar {
-	transition: 0.5s box-shadow;
-}
-
-// Limit the size of the logo
-.nav-logo {
-	max-height: 20px;
-}
-
-// Make topics bar look better
-.topics-nav {
-	padding: 12px;
-
-	p {
-		display: inline-block;
-		margin: 0px;
-	}
-}
+@import "./navigation";
 
 // Importing post list styles
 @import "./post-list";
