@@ -1,42 +1,36 @@
 .posts-section {
-	padding-top: 30px;
+	padding-top: 50px;
 	padding-bottom: 30px;
 }
 
 .posts-container {
-	// background-color: pink;
 	max-width: 830px;
 	margin-left: auto;
 	margin-right: auto;
 }
 
 .post-title > h2 {
-	font-weight: 600;
-	padding-bottom: 5px;
-	margin-top: 60px;
+	font-weight: 700;
+    margin: 60px 0px 0px 0px;
+    line-height: 29px;
+    color: var(--text-color);
 }
 
 .post-meta {
-	// background-color: pink;
-	padding-left: 12px;
-
-	p {
-		display: inline-block;
-	}
+    display: flex;
+    align-items: center;
+    margin: 0.7rem 0px 1rem 0px;
 }
 
-.post-authorimg {
-	border-radius: 100%;
-	max-height: 30px;
+.post-meta > p {
+    margin: 0px 0px 0px 0.4rem;
 }
 
-.post-meta-authorcat {
-	padding-left: 5px;
-}
-
-.post-meta-sep {
-	padding-left: 7px;
-	padding-right: 7px;
+.post-meta > img {
+    margin: 0px 0.2rem 0px 0px;
+    border-radius: 100%;
+    max-height: 30px;
+    max-width: 30px;
 }
 
 .post-meta-datetime {
@@ -52,16 +46,16 @@
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center center;
-	background-color: white;
+	background-color: var(--theme);
 }
 
 .post-excerpt {
 	opacity: 0.6;
-	font-family: 'Open Sans', sans-serif;
+    font-family: var(--font-normal);
+    font-size: 1.2rem;
 }
 
 .pageination-section {
-	// background-color: pink;
 	padding-top: 40px;
 	padding-bottom: 40px;
 	min-height: 20px;

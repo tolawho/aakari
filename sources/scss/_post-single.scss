@@ -1,13 +1,10 @@
 .post-content {
-	font-family: 'Open Sans', sans-serif;
+    font-family: var(--font-normal);
+    font-size: 1.2rem;
 
 	p:nth-child(1) {
 		// Increase the size of first paragraph
 		font-size: 1.5rem;
-	}
-
-	p {
-		font-size: 1.2rem;
 	}
 
 	h1, h2, h3, h4, h5, h6 {
@@ -82,7 +79,6 @@
 	}
 
 	.share-post {
-		// background-color: pink;
 		margin-top: 30px;
 
 		.share-title {

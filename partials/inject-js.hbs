@@ -1,12 +1,4 @@
 <script type="text/javascript" src="{{asset 'js/jquery.min.js'}}"></script>
 <script type="text/javascript" src="{{asset 'js/popper.min.js'}}"></script>
 <script type="text/javascript" src="{{asset 'js/bootstrap.min.js'}}"></script>
-
-{{!-- JavaScript for adding shadow to navigation on scroll --}}
-<script>
-	$(window).scroll(function() {
-	  var offset = $(window).scrollTop();
-	  console.log(offset);
-	  $('.navbar').toggleClass('shadow', offset > 50);
-	});
-</script>
+<script type="text/javascript" src="{{asset 'js/aakari.js'}}"></script>
