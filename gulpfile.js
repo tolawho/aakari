@@ -44,7 +44,10 @@ const globs = {
         '!sources', '!sources/**',
         '!node_modules', '!node_modules/**',
         '!dist', '!dist/**',
-        '!package-lock.json'
+        '!database', '!database/**',
+        '!public', '!public/**',
+        '!scripts', '!scripts/**',
+        '!assets/css/maps', '!assets/css/maps/**'
     ]
 };
 
@@ -98,7 +101,8 @@ function package_theme() {
 function clean() {
     return del([
         './assets',
-        './dist'
+        './dist',
+        './public'
     ]);
 }
 
