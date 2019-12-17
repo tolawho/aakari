@@ -51,6 +51,7 @@
         "eslint": "^6.7.2",
         "gscan": "^3.2.1",
         "gulp": "^4.0.2",
+        "gulp-livereload": "^4.0.2",
         "gulp-postcss": "^8.0.0",
         "gulp-sass": "^4.0.2",
         "gulp-sourcemaps": "^2.6.4",

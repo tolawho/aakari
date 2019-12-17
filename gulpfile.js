@@ -6,12 +6,13 @@
 //                       |
 
 const del = require('del');
-const postcss = require('gulp-postcss');
 const gulp = require('gulp');
-const sass = require('gulp-sass');
-const sourcemaps = require('gulp-sourcemaps');
-const uglify = require('gulp-uglify');
 const zip = require('gulp-zip');
+const sass = require('gulp-sass');
+const uglify = require('gulp-uglify');
+const postcss = require('gulp-postcss');
+const livereload = require('gulp-livereload');
+const sourcemaps = require('gulp-sourcemaps');
 
 const postCSSConfig = require('./postcss.config');
 
@@ -23,6 +24,7 @@ const globs = {
     distDir: './dist',
     styles: './sources/scss/**/*.scss',
     scripts: './sources/js/**/*.js',
+    markup: './**/*.hbs',
     packageFilename: `${require('./package.json').name}-${require('./package.json').version}.zip`,
     vendorScripts: [
         './node_modules/jquery/dist/jquery.min.js',
@@ -79,12 +81,15 @@ function clean() {
 
 // The function that watches for file changes and re-builds the changed sources
 function watch(callback) {
-    // [TODO]: Configure the live reloading server
+    // Start the livereload server
+    // Note: Install the extension below to get live reload working
+    // https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei
+    livereload.listen();
 
     // Watch for file changes
     gulp.watch(globs.styles, styles);
     gulp.watch(globs.scripts, scripts);
-    // gulp.watch(globs.markup).on('change', (styles, livereload.changed));
+    gulp.watch(globs.markup).on('change', (styles, livereload.changed));
 
     // Tell gulp to continue with this function
     callback();
@@ -102,8 +107,8 @@ gulp.task('default', gulp.series('build', watch));
 
 // Export the function that are used by Gulp
 exports.clean = clean;
-exports.vendor_scripts = vendor_scripts;
-exports.scripts = scripts;
-exports.styles = styles;
-exports.package = package_theme;
 exports.watch = watch;
+exports.styles = styles;
+exports.scripts = scripts;
+exports.package = package_theme;
+exports.vendor_scripts = vendor_scripts;
