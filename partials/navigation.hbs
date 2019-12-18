@@ -3,7 +3,7 @@
         <a href="{{@blog.url}}" class="navbar-brand">
             {{!-- Check if the blog has a logo image --}}
             {{#if @blog.logo}}
-            <img src="{{img_url @blog.logo absolute='true'}}" alt="{{@blog.title}}" class="nav-logo">
+            <img id="logo" src="{{img_url @blog.logo absolute='true'}}" alt="{{@blog.title}}" class="nav-logo">
             {{else}}
             {{@blog.title}}
             {{/if}}
@@ -21,9 +21,9 @@
                 {{/foreach}}
             </ul>
         </div>
-        <div class="social w-100 text-right text-dark d-none d-lg-block">
-            {{#if @blog.twitter}}<a href="{{twitter_url @blog.twitter}}"><i class="fab fa-twitter"></i></a>{{/if}}
-            {{#if @blog.facebook}}<a href="{{facebook_url @blog.facebook}}"><i class="fab fa-facebook"></i></a>{{/if}}
+        <div id="socials" class="social w-100 text-right text-dark d-none d-lg-block">
+            {{#if @blog.twitter}}<a target="_blank" rel="noopener" href="{{twitter_url @blog.twitter}}"><i class="fab fa-twitter"></i></a>{{/if}}
+            {{#if @blog.facebook}}<a target="_blank" rel="noopener"  href="{{facebook_url @blog.facebook}}"><i class="fab fa-facebook"></i></a>{{/if}}
         </div>
     </div>
 </header>

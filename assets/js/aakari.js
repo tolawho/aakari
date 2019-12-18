@@ -1,1 +1,1 @@
-$(window).scroll(function(){var o=$(window).scrollTop();$(".navbar").toggleClass(["fixed-top","shadow"],500<o)});
+function add_social(o,a){$("#socials").prepend('<a target="_blank" rel="noopener" href="'+a+'"><i class="'+o+'"></i></a>')}$(window).scroll(function(){var o=$(window).scrollTop();$(".navbar").toggleClass(["fixed-top","shadow"],500<o)});
