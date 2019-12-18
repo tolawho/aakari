@@ -20,6 +20,10 @@
 	max-height: 20px;
 }
 
+#darkModeNav {
+    margin: 0.5rem 0px 0.5rem 0.3rem;
+}
+
 .social > * {
     color: var(--text-color);
     margin: 0px 0.4rem;
@@ -37,5 +41,11 @@
 	p {
 		display: inline-block;
 		margin: 0px;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar-brand {
+        width: 100% !important;
     }
 }

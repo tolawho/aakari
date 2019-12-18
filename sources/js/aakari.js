@@ -8,6 +8,7 @@ $(window).scroll(function () {
 
 // This file will Will store and toggle the dark theme
 var darkModeSwitch = document.querySelector('#darkMode');
+var darkModeSwitchNav = document.querySelector('#darkModeNav');
 
 var html = null;
 
@@ -49,4 +50,6 @@ function restoreDarkMode() {
 }
 
 darkModeSwitch.onclick = toggleDarkMode;
+darkModeSwitchNav.onclick = toggleDarkMode;
+
 restoreDarkMode();
