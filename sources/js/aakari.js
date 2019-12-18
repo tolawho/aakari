@@ -19,13 +19,14 @@ function grabElements() {
 
 // The function that enables dark mode
 function enableDarkMode() {
-    html.style.cssText = '--theme: white; --text-color: #000000; --primary: #006cff; --secondary: #000000;';
+    html.style.cssText = '--theme: white; --text-color: #000000; --secondary: #000000;';
     localStorage.setItem('darkMode', true);
 }
 
 // The function that disables the dark mode
 function disableDarkMode() {
-    html.style.cssText = '--theme: rgb(30, 30, 30); --text-color: #FFFFFF; --primary: #0095ff; --secondary: #FFFFFF;';
+    // html.style.cssText = '--theme: rgb(30, 30, 30); --text-color: #FFFFFF; --primary: #0095ff; --secondary: #FFFFFF;';
+    html.style.cssText = '--theme: rgb(40, 40, 40); --text-color: #FFFFFF; --secondary: #FFFFFF;';
     localStorage.setItem('darkMode', false);
 }
 
