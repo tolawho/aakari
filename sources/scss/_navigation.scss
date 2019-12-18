@@ -2,20 +2,12 @@
     position: relative;
 }
 
-.navbar {
-    background-color: var(--theme);
-}
-
 .navbar-brand {
     font-weight: 700;
 }
 
 .navbar-nav {
     font-weight: 500;
-}
-
-.navbar-nav a {
-    color: var(--text-color);
 }
 
 .navbar-toggler {
@@ -36,13 +28,9 @@
 }
 
 .social > * {
-    color: var(--text-color);
     margin: 0px 0.4rem;
     cursor: pointer;
-}
-
-.social > *:hover {
-    color: var(--text-color);
+    color: inherit;
 }
 
 // Make topics bar look better
