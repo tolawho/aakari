@@ -1,5 +1,5 @@
 <article class="{{post_class}}">
-	<a href="{{url absolute='true'}}" class="post-title width-container"><h2>{{title}}</h2></a>
+	<a href="{{url absolute='true'}}" class="post-title text-dark width-container"><h2>{{title}}</h2></a>
 	<div class="post-meta">
 		{{#primary_author}}
 		{{#if profile_image}}<img class="post-authorimg" src="{{img_url profile_image absolute='true'}}" alt="{{name}}">{{/if}}
@@ -9,7 +9,7 @@
 		<p class="post-meta-datetime">{{date published_at format="MMMM DD, YYYY"}}</p>
 	</div>
 	{{#if feature_image}}
-	<div class="post-img lazy" data-src="{{img_url feature_image absolute='true'}}"></div>
+	<div class="post-img bg-white lazy" data-src="{{img_url feature_image absolute='true'}}"></div>
 	{{/if}}
 	<p class="post-excerpt">{{excerpt characters="340"}}</p>
 	<p><a href="{{url absolute='true'}}">Read More <i class="fas fa-long-arrow-alt-right"></i></a></p>

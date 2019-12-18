@@ -1,6 +1,5 @@
-// Navigation Styles
-.navbar {
-    background-color: var(--theme);
+#header {
+    position: relative;
 }
 
 .navbar-brand {
@@ -11,8 +10,12 @@
     font-weight: 500;
 }
 
-.navbar-nav a {
-    color: var(--text-color);
+.navbar-toggler {
+    color: $primary;
+    
+    i {
+        font-size: 1rem !important;
+    }
 }
 
 // Limit the size of the logo
@@ -20,14 +23,14 @@
 	max-height: 20px;
 }
 
-.social > * {
-    color: var(--text-color);
-    margin: 0px 0.4rem;
-    cursor: pointer;
+#darkModeNav {
+    margin: 0.5rem 0px 0.5rem 0.3rem;
 }
 
-.social > *:hover {
-    color: var(--text-color);
+.social > * {
+    margin: 0px 0.4rem;
+    cursor: pointer;
+    color: inherit;
 }
 
 // Make topics bar look better
@@ -37,5 +40,11 @@
 	p {
 		display: inline-block;
 		margin: 0px;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar-brand {
+        width: 100% !important;
     }
 }
