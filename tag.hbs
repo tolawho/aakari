@@ -6,7 +6,7 @@ into the {body} of the default.hbs template --}}
 {{#tag}}
 
 {{!-- Start the head section --}}
-<section id="tag-section" class="head-section text-center">
+<section id="tag-section" class="head-section text-center" data-aos="fade">
 	<h2 class="head-section-title">{{name}}</h2>
 	{{#if description}}
 	<p class="head-section-text">{{description}}</p>
@@ -18,7 +18,7 @@ into the {body} of the default.hbs template --}}
 {{!-- Finish accessing the tag variables --}}
 {{/tag}}
 
-<main role="main" id="posts-section" class="posts-section bg-light">
+<main role="main" id="posts-section" class="posts-section bg-light" data-aos="fade">
 	<div class="posts-container">
 		{{!-- Loop through each blog post --}}
 		{{#foreach posts limit=@config.posts_per_page}}
