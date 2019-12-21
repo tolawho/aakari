@@ -1,11 +1,12 @@
 /*eslint-env browser */
-/* global $ */
+/* eslint no-unused-vars: "off" */
 
-$(window).scroll(function () {
-    var offset = $(window).scrollTop();
-    $('.navbar').toggleClass(['fixed-top', 'shadow'], offset > 500);
-});
+// add_social() adds social icons
+function add_social(iconString, link) {
+    document.querySelector('#socials').innerHTML = '<a target="_blank" rel="noopener" href="' + link + '"><i class="'+ iconString + '"></i></a>' + document.querySelector('#socials').innerHTML;
+}
 
-function add_social(icon, link) {
-    $('#socials').prepend( '<a target="_blank" rel="noopener" href="' + link + '"><i class="'+ icon + '"></i></a>' );
+// toggle_nav() will toggle the navigation bar
+function toggle_nav() {
+    document.querySelector('#mainnav').classList.toggle('show');
 }

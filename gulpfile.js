@@ -33,12 +33,7 @@ const globs = {
     scripts: './sources/js/**/*.js',
     markup: './**/*.hbs',
     packageFilename: `${require('./package.json').name}-${require('./package.json').version}.zip`,
-    vendorScripts: [
-        './node_modules/jquery/dist/jquery.min.js',
-        './node_modules/popper.js/dist/umd/popper.min.js',
-        './node_modules/bootstrap/dist/js/bootstrap.min.js',
-        './node_modules/jquery-lazy/jquery.lazy.min.js'
-    ],
+    vendorScripts: [],
     unFilesForPack: [
         '**',
         '!sources', '!sources/**',
@@ -127,8 +122,7 @@ function watch(callback) {
 // The Gulp task that freshly builds all the assets
 gulp.task('build', gulp.series(clean, gulp.parallel(
     styles,
-    scripts,
-    vendor_scripts
+    scripts
 )));
 
 // The Gulp task that does a fresh build and keeps watching for any changes
@@ -140,4 +134,3 @@ exports.watch = watch;
 exports.styles = styles;
 exports.scripts = scripts;
 exports.package = package_theme;
-exports.vendor_scripts = vendor_scripts;

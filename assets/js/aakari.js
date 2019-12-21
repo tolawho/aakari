@@ -1,1 +1,1 @@
-function add_social(o,a){$("#socials").prepend('<a target="_blank" rel="noopener" href="'+a+'"><i class="'+o+'"></i></a>')}$(window).scroll(function(){var o=$(window).scrollTop();$(".navbar").toggleClass(["fixed-top","shadow"],500<o)});
+function add_social(e,n){document.querySelector("#socials").innerHTML='<a target="_blank" rel="noopener" href="'+n+'"><i class="'+e+'"></i></a>'+document.querySelector("#socials").innerHTML}function toggle_nav(){document.querySelector("#mainnav").classList.toggle("show")}

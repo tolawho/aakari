@@ -17,20 +17,3 @@ into the {{{body}}} of the default.hbs template --}}
 
 {{!-- This tag will output the footer --}}
 {{> "footer"}}
-
-{{!-- This tag will output the required JavaScripts for all pages --}}
-{{> "inject-js"}}
-
-{{!-- Lazy loading images, will be only done on the index page, author page and tag page --}}
-{{!-- All other pages will load images normally --}}
-{{!-- Lazy loading configuration --}}
-<script type="text/javascript" src="{{asset 'js/jquery.lazy.min.js'}}"></script>
-<script type="text/javascript">
-	$(function() {
-		$('.lazy').lazy({
-			effect: "fadeIn",
-			effectTime: 300,
-			threshold: 0
-		});
-	});
-</script>
