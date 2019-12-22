@@ -22,8 +22,8 @@ into the {body} of the default.hbs template --}}
 	<div class="posts-container">
 		{{!-- Loop through each blog post --}}
 		{{#foreach posts limit=@config.posts_per_page}}
-			{{!-- Use our template to format the recived data --}}
-			{{> "posts-list"}}
+			{{!-- Use our template to format the received data --}}
+			{{> "article"}}
 		{{/foreach}}
 		{{!-- This tag outputs pagination section --}}
 		{{pagination}}

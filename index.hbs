@@ -5,9 +5,9 @@ into the {{{body}}} of the default.hbs template --}}
 <main role="main" id="posts-section" class="posts-section" data-aos="fade">
 	<div class="posts-container">
 		{{!-- Loop through each blog post --}}
-		{{#foreach posts limit=@config.posts_per_page}}
+		{{#foreach posts}}
 			{{!-- Use our template to format the received data --}}
-			{{> "posts-list"}}
+			{{> "article"}}
 		{{/foreach}}
 		
 		{{!-- This tag outputs pagination section --}}

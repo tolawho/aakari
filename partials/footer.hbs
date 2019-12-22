@@ -1,22 +1,22 @@
 <footer id="footer" class="footer-section text-light bg-primary">
 	<div class="container">
 		<div class="copyrights float-left">
-			<h5 class="footer-logo">{{@blog.title}}</h5><br>
+			<h5 class="footer-logo">{{@site.title}}</h5><br>
 			{{!-- Replace the above line with the HTML code in the below link for showing the logo instead of text in footer. --}}
 			{{!-- <h5 class="footer-logo"><img src="assets/img/white_logo.png" alt="Vasanth Developer"></h5><br> --}}
-			<p class="footer-copyright">{{@blog.title}} &copy; {{date format='YYYY'}}. All Rights Reserved.
+			<p class="footer-copyright">{{@site.title}} &copy; {{date format='YYYY'}}. All Rights Reserved.
 				{{!-- DO NOT REMOVE THE CREDITS, IF YOU RESPECT MY WORK --}}
 				<small>Designed by <a class="watermark-text" href="https://vasanthdeveloper.com" target="_blank" rel="noopener">Vasanth Developer</a>.</small></p>
 		</div>
 		<ul class="nav footer-nav float-right">
-			{{#if @blog.twitter}}
+			{{#if @site.twitter}}
 			<li class="nav-item">
-				<a class="nav-link" href="{{twitter_url @blog.twitter}}" aria-label="Twitter" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
+				<a class="nav-link" href="{{twitter_url @site.twitter}}" aria-label="Twitter" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
 			</li>
 			{{/if}}
-			{{#if @blog.facebook}}
+			{{#if @site.facebook}}
 			<li class="nav-item">
-				<a class="nav-link" href="{{facebook_url @blog.facebook}}" aria-label="Facebook" target="_blank" rel="noopener"><i class="fab fa-facebook-square"></i></a>
+				<a class="nav-link" href="{{facebook_url @site.facebook}}" aria-label="Facebook" target="_blank" rel="noopener"><i class="fab fa-facebook-square"></i></a>
 			</li>
 			{{/if}}
 		</ul>

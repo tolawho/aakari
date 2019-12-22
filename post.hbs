@@ -1,45 +1,19 @@
 {{!< default}}
 {{!-- The tag above means: insert everything in this file
-into the {body} of the default.hbs template --}}
+into the {{{body}}} of the default.hbs template --}}
 
 <main role="main" id="posts-section" class="posts-section" data-aos="fade">
 	<div class="posts-container">
 		{{#post}}
-		<article data-aos="fade-up">
-			<a class="post-title width-container text-dark"><h2>{{title}}</h2></a>
-			<div class="post-meta">
-				{{#primary_author}}
-				{{#if profile_image}}<img class="post-authorimg" src="{{img_url profile_image absolute='true'}}" alt="{{name}}">{{/if}}
-				<p class="post-meta-authorcat"><a href="{{url absolute='true'}}">{{name}}</a>{{/primary_author}}
-				{{#if primary_tag}} on <a href="/tag/{{primary_tag.slug}}">{{primary_tag.name}}</a>{{/if}}</p>
-				<p class="post-meta-sep">•</p>
-				<p class="post-meta-datetime">{{date published_at format="MMMM DD, YYYY"}}</p>
-			</div>
-			{{#if feature_image}}
-			<div class="post-img shadow-sm lazy" style="background-image: url('{{img_url feature_image absolute='true'}}');"></div>
-			{{/if}}
-			<div class="post-content">
-				{{content}}
+        {{> "article"}}
 
-				{{!-- Social media share buttons --}}
-				<div class="share-post">
-					<hr>
-					<p class="share-title">Share this article:</p>
-					<div class="share-buttons">
-						<a href="https://twitter.com/share?text={{encode title}}&amp;url={{url absolute='true'}}" target="_blank" rel="noopener" class="btn btn-primary" onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;"><i class="fab fa-twitter"></i></a>
+        {{!-- Show the share buttons --}}
+        {{> "share"}}
 
-						<a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute='true'}}" target="_blank" rel="noopener" class="btn btn-primary" onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;"><i class="fab fa-facebook-square"></i></a>
-
-						<a href="https://www.reddit.com/submit?title={{encode title}}&amp;url={{url absolute='true'}}" target="_blank" rel="noopener" class="btn btn-primary"><i class="fab fa-reddit-alien"></i></a>
-					</div>
-				</div>
-
-				{{!-- This is the tailored area for comments --}}
-				<div class="dcomments">
-					
-				</div>
-			</div>
-		</article>
+        {{!-- This is the tailored area for comments --}}
+        <div class="dcomments">
+            
+        </div>
 		{{/post}}
 	</div>
 </main>
