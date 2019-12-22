@@ -32,7 +32,7 @@
     </div>
 
 	{{!-- This tag will be replaced by the actual content of the page --}}
-	{{{body}}}
+	<div id="siteContent">{{{body}}}</div>
 
     <script src="{{asset 'js/aakari.js'}}"></script>
     <script src="https://unpkg.com/nprogress@0.2.0/nprogress.js"></script>
@@ -42,6 +42,8 @@
             disable: 'mobile',
             once: true
         });
+        
+        capture_href();
     </script>
 
     {{!-- Ghost outputs important scripts and data with this tag --}}
