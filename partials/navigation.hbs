@@ -1,16 +1,15 @@
-<header class="navbar navbar-expand-lg p-3 bg-white">
+<header class="navbar navbar-expand-lg p-3 bg-white" data-aos="fade-down" data-aos-delay="50">
     <div class="container">
-        <a href="{{@blog.url}}" class="navbar-brand">
+        <a href="{{@site.url}}" class="navbar-brand">
             {{!-- Check if the blog has a logo image --}}
-            {{#if @blog.logo}}
-            <img id="logo" src="{{img_url @blog.logo absolute='true'}}" alt="{{@blog.title}}" class="nav-logo">
+            {{#if @site.logo}}
+            <img id="logo" src="{{img_url @site.logo absolute='true'}}" alt="{{@site.title}}" class="nav-logo">
             {{else}}
-            {{@blog.title}}
+            {{@site.title}}
             {{/if}}
         </a>
-        <button class="navbar-toggler btn-primary btn text-dark" type="button" data-toggle="collapse" data-target="#mainnav"
-            aria-controls="mainnav" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="fas fa-compass"></i>
+        <button class="navbar-toggler btn-primary btn" type="button" data-toggle="collapse" onclick="toggle_nav();" onfocusout="toggle_nav();" aria-label="Toggle navigation">
+            <i class="far fa-compass"></i>
         </button>
         <div class="collapse navbar-collapse w-100" id="mainnav">
             <ul class="navbar-nav m-auto">
@@ -22,8 +21,8 @@
             </ul>
         </div>
         <div id="socials" class="social w-100 text-right text-dark d-none d-lg-block">
-            {{#if @blog.twitter}}<a target="_blank" rel="noopener" href="{{twitter_url @blog.twitter}}"><i class="fab fa-twitter"></i></a>{{/if}}
-            {{#if @blog.facebook}}<a target="_blank" rel="noopener"  href="{{facebook_url @blog.facebook}}"><i class="fab fa-facebook"></i></a>{{/if}}
+            {{#if @site.twitter}}<a target="_blank" rel="noopener" href="{{twitter_url @site.twitter}}"><i class="fab fa-twitter"></i></a>{{/if}}
+            {{#if @site.facebook}}<a target="_blank" rel="noopener"  href="{{facebook_url @site.facebook}}"><i class="fab fa-facebook"></i></a>{{/if}}
         </div>
     </div>
 </header>

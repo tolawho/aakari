@@ -6,7 +6,7 @@ into the {body} of the default.hbs template --}}
 {{#author}}
 
 {{!-- Start the head section --}}
-<section id="tag-section" class="head-section text-center">
+<section id="tag-section" class="head-section text-center" data-aos="fade">
 	{{#if profile_image}}
 	<img class="head-section-profile shadow" src="{{profile_image}}" alt="{{name}}">
 	{{/if}}
@@ -31,35 +31,15 @@ into the {body} of the default.hbs template --}}
 {{!-- Finish accessing the author variables --}}
 {{/author}}
 
-<main role="main" id="posts-section" class="posts-section bg-light">
+<main role="main" id="posts-section" class="posts-section bg-light" data-aos="fade">
 	<div class="posts-container">
 		{{!-- Loop through each blog post --}}
 		{{#foreach posts}}
-			{{!-- Use our template to format the recived data --}}
-			{{> "posts-list"}}
+			{{!-- Use our template to format the received data --}}
+			{{> "article"}}
 		{{/foreach}}
-
-		{{!-- This tag outputs pagination section --}}
-		{{pagination}}
 	</div>
+
+    {{!-- This tag outputs pagination section --}}
+    {{pagination}}
 </main>
-
-{{!-- This tag will output the footer --}}
-{{> "footer"}}
-
-{{!-- This tag will output the required JavaScripts for all pages --}}
-{{> "inject-js"}}
-
-{{!-- Lazy loading images, will be only done on the index page, author page and tag page --}}
-{{!-- All other pages will load images normally --}}
-{{!-- Lazy loading configuration --}}
-<script type="text/javascript" src="{{asset 'js/jquery.lazy.min.js'}}"></script>
-<script type="text/javascript">
-	$(function() {
-		$('.lazy').lazy({
-			effect: "fadeIn",
-			effectTime: 300,
-			threshold: 0
-		});
-	});
-</script>

@@ -1,25 +1,31 @@
 <!DOCTYPE html>
-<html lang="{{lang}}">
+<html lang="{{@site.lang}}">
+
 <head>
-	{{!-- Document Settings --}}
-	<meta charset="UTF-8">
-	<meta name="HandheldFriendly" content="True">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {{!-- Document Settings --}}
+    <meta charset="UTF-8">
+    <meta name="HandheldFriendly" content="True">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	{{!-- Base Meta --}}
-	<title>{{meta_title}}</title>
+    {{!-- Base Meta --}}
+    <title>{{meta_title}}</title>
 
-	{{!-- Styles, Fonts and Icons --}}
-	<link rel="stylesheet" href="{{asset 'css/aakari.css'}}">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|Poppins:400,500,600,700">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    {{!-- Styles, Fonts and Icons --}}
+    <link rel="stylesheet" href="{{asset 'css/aakari.css'}}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|Poppins:400,500,600,700">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
 
-	{{!-- This tag outputs SEO meta structured data and other important settings --}}
+    {{!-- NProgress styles --}}
+    <style>{{> "n_progress"}}</style>
+
+    {{!-- This tag outputs SEO meta structured data and other important settings --}}
     {{ghost_head}}
 </head>
+
 <body>
-	<div id="header" class="shadow">
+    <div id="header" class="shadow" data-aos="fade-down">
         {{!-- This tag will output the navigation bar --}}
         {{navigation}}
 
@@ -27,10 +33,38 @@
         {{> "topics-bar"}}
     </div>
 
-	{{!-- This tag will be replaced by the actual content of the page --}}
-	{{{body}}}
+    {{!-- This tag will be replaced by the actual content of the page --}}
+    <div id="siteContent">{{{body}}}</div>
 
-	{{!-- Ghost outputs important scripts and data with this tag --}}
-	{{ghost_foot}}
+    {{!-- This tag will output the footer --}}
+    {{> "footer"}}
+
+    <script src="{{asset 'js/aakari.js'}}"></script>
+    <script src="https://unpkg.com/nprogress@0.2.0/nprogress.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            disable: 'mobile',
+            once: true
+        });
+
+        capture_href();
+    </script>
+    {{#is "index"}}
+    <script src="//unpkg.com/ananta@0.2.2/src/ananta.js"></script>
+    <script>
+        ananta.init({
+            uri: '{{@site.url}}/page/<i>',
+            container: '.posts-container',
+            automatic: false
+        });
+        ananta.event.on('fail', remove_pagination);
+        ananta.event.on('done', capture_href);
+    </script>
+    {{/is}}
+
+    {{!-- Ghost outputs important scripts and data with this tag --}}
+    {{ghost_foot}}
 </body>
+
 </html>
