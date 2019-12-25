@@ -1,17 +1,4 @@
-<div class="pageination-section text-center">
-	<div class="row">
-		<div class="col-sm">
-			{{#if prev}}
-			<a href="{{page_url prev}}" class="next"><i class="fas fa-long-arrow-alt-left"></i> Load next</a>
-			{{/if}}
-		</div>
-		<div class="col-sm status text-center">
-			<p>Page {{page}} of {{pages}}</p>
-		</div>
-		<div class="col-sm">
-			{{#if next}}
-			<a href="{{page_url next}}" class="previous">Load previous <i class="fas fa-long-arrow-alt-right"></i></a>
-			{{/if}}
-		</div>
-	</div>
+<div class="text-center pagination">
+    <button onclick="ananta.fetch();" type="button" class="btn btn-dark"><i class="fas fa-chevron-circle-down"></i> Load more</button>
+    <p>You have reached the end.</p>
 </div>

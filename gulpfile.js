@@ -31,7 +31,7 @@ const globs = {
     distDir: './dist',
     styles: './sources/scss/**/*.scss',
     scripts: './sources/js/**/*.js',
-    markup: './**/*.hbs',
+    markup: ['./**/*.hbs', '!partials/n_progress.hbs'],
     packageFilename: `${require('./package.json').name}-${require('./package.json').version}.zip`,
     vendorScripts: [],
     unFilesForPack: [

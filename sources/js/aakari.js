@@ -1,5 +1,5 @@
 /*eslint-env browser */
-/* global NProgress */
+/* global NProgress, ananta */
 /* eslint no-unused-vars: "off" */
 
 // add_social() adds social icons
@@ -63,6 +63,7 @@ function handle_xhr() {
         main.parentNode.replaceChild(newMain, main);
         document.querySelector('header').scrollIntoView();
         capture_href();
+        ananta.reset();
         window.history.pushState({}, newTitle, this.responseURL);
         NProgress.done();
     }
@@ -70,5 +71,11 @@ function handle_xhr() {
 
 // handle_xhr_error() will handle if the request failed
 function handle_xhr_error() {
+    console.log(this);
+}
 
+// remove_pagination() would remove the pagination section if loading fails by ananta
+function remove_pagination() {
+    document.querySelector('.pagination').querySelector('p').style.display = 'block';
+    document.querySelector('.pagination').querySelector('button').style.display = 'none';
 }

@@ -25,7 +25,12 @@
 
 // Set the font size for buttons
 .btn {
-	font-size: 0.8rem !important;
+    font-size: 0.9rem !important;
+    font-weight: 600;
+
+    i {
+        margin-right: 0.5rem;
+    }
 }
 
 // Fonts
@@ -43,6 +48,7 @@ $secondary: #000000;
 $btn-border-radius: 20px;
 $btn-padding-y: 7px;
 $btn-padding-x: 15px;
+$btn-font-weight: 600;
 
 // Anchor
 $link-hover-decoration: none;
@@ -79,7 +85,6 @@ $link-hover-decoration: none;
 @import "./node_modules/bootstrap/scss/navbar";
 @import "./node_modules/bootstrap/scss/card";
 @import "./node_modules/bootstrap/scss/breadcrumb";
-@import "./node_modules/bootstrap/scss/pagination";
 @import "./node_modules/bootstrap/scss/badge";
 @import "./node_modules/bootstrap/scss/jumbotron";
 @import "./node_modules/bootstrap/scss/alert";
@@ -108,19 +113,11 @@ body {
 	min-height: 110vh;
 }
 
+// Import the overriding styles for aakari theme
 @import "./navigation";
-
-// Importing post list styles
 @import "./post-list";
-
-// Importing head section styles
 @import "./head-section";
-
-// Importing post single page styles
 @import "./post-single";
-
-// Importing footer styles
+@import "./pagination";
 @import "./footer";
-
-// Importing the responsive style sheets
 @import "./responsive";
