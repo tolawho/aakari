@@ -1,0 +1,12 @@
+
+*:focus {
+	outline: 0;
+}
+
+::-webkit-scrollbar {
+	display: none;
+}
+
+::selection {
+	background-color: #D8E8FF;
+}

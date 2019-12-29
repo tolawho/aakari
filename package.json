@@ -46,8 +46,8 @@
         "posts_per_page": 6,
         "image_sizes": {
             "featured": {
-                "width": 830,
-                "height": 428
+                "width": "958",
+                "height": "514.59"
             }
         }
     },

@@ -4,8 +4,11 @@
 <head>
     {{!-- Document Settings --}}
     <meta charset="UTF-8">
+    <link rel="manifest" href="/manifest.json">
     <meta name="HandheldFriendly" content="True">
+    <meta name="mobile-web-app-capable" content="yes">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     {{!-- Base Meta --}}
@@ -42,26 +45,24 @@
     <script src="{{asset 'js/aakari.js'}}"></script>
     <script src="https://unpkg.com/nprogress@0.2.0/nprogress.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="//unpkg.com/ananta@0.2.2/src/ananta.js"></script>
     <script>
+        capture_href();
         AOS.init({
             disable: 'mobile',
             once: true
         });
-
-        capture_href();
-    </script>
-    {{#is "index"}}
-    <script src="//unpkg.com/ananta@0.2.2/src/ananta.js"></script>
-    <script>
         ananta.init({
             uri: '{{@site.url}}/page/<i>',
-            container: '.posts-container',
+            container: '#articles',
             automatic: false
         });
         ananta.event.on('fail', remove_pagination);
         ananta.event.on('done', capture_href);
+        {{!-- setTimeout(function() {
+            window.scrollTo(0,100);
+        }, 1000); --}}
     </script>
-    {{/is}}
 
     {{!-- Ghost outputs important scripts and data with this tag --}}
     {{ghost_foot}}

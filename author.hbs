@@ -31,8 +31,8 @@ into the {body} of the default.hbs template --}}
 {{!-- Finish accessing the author variables --}}
 {{/author}}
 
-<main role="main" id="posts-section" class="posts-section bg-light" data-aos="fade">
-	<div class="posts-container">
+<main role="main" id="posts-section" data-aos="fade">
+	<div id="articles" class="container">
 		{{!-- Loop through each blog post --}}
 		{{#foreach posts}}
 			{{!-- Use our template to format the received data --}}

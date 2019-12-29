@@ -18,8 +18,8 @@ into the {body} of the default.hbs template --}}
 {{!-- Finish accessing the tag variables --}}
 {{/tag}}
 
-<main role="main" id="posts-section" class="posts-section bg-light" data-aos="fade">
-	<div class="posts-container">
+<main role="main" id="posts-section" data-aos="fade">
+	<div id="articles" class="container">
 		{{!-- Loop through each blog post --}}
 		{{#foreach posts limit=@config.posts_per_page}}
 			{{!-- Use our template to format the received data --}}

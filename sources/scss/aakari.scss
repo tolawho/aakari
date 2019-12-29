@@ -4,58 +4,11 @@
  * Licensed under Creative Commons 3.0 (https://creativecommons.org/licenses/by/3.0)
  */
 
-// ######################################
-// ##           Configuration          ##
-// ######################################
-
-// Remove the blue outline on focus
-*:focus {
-	outline: 0;
-}
-
-// Hide the scroll bar
-::-webkit-scrollbar {
-	display: none;
-}
-
-// Set the text selection color
-::selection {
-	background-color: #D8E8FF;
-}
-
-// Set the font size for buttons
-.btn {
-    font-size: 0.9rem !important;
-    font-weight: 600;
-
-    i {
-        margin-right: 0.5rem;
-    }
-}
-
-// Fonts
-$font-family-base: 'Poppins', sans-serif;
-$font-family-normal: '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', '"Helvetica Neue"', 'Arial', '"Noto Sans"', 'sans-serif', '"Apple Color Emoji"', '"Segoe UI Emoji"', '"Segoe UI Symbol"', '"Noto Color Emoji"';
-
-$box-shadow: -1px 19px 26px -11px rgba(0,0,0,0.1);
-
-// Colors
-$light: #FBFDFF;
-$primary: #006CFF;
-$secondary: #000000;
-
-// Buttons
-$btn-border-radius: 20px;
-$btn-padding-y: 7px;
-$btn-padding-x: 15px;
-$btn-font-weight: 600;
-
-// Anchor
-$link-hover-decoration: none;
-
-// ######################################
-// ##            Bootstrap 4           ##
-// ######################################
+// Custom styles for elements that override Bootstrap's look
+@import "./variables";
+@import "./elements/html";
+@import "./elements/button";
+@import "./elements/anchor";
 
 // Bootstrap Core
 @import "./node_modules/bootstrap/scss/functions";
@@ -101,23 +54,22 @@ $link-hover-decoration: none;
 @import "./node_modules/bootstrap/scss/utilities/position";
 @import "./node_modules/bootstrap/scss/utilities/align";
 
-// Ghost Styles
-@import "./ghost-styles";
-
 // ######################################
 // ##           Customization          ##
 // ######################################
 
-// Make the body adjust with fixed navbar
-body {
-	min-height: 110vh;
-}
-
 // Import the overriding styles for aakari theme
-@import "./navigation";
-@import "./post-list";
-@import "./head-section";
+/* purgecss start ignore */
+@import "./components/navigation";
+@import "./components/main";
+@import "./components/article";
+@import "./components/section";
+
+// TODO: Merge these styles with article component styles
 @import "./post-single";
-@import "./pagination";
-@import "./footer";
-@import "./responsive";
+@import "./components/pagination";
+@import "./components/footer";
+
+// TODO: Remove this and merge everything into their respective component stylesheet
+// @import "./responsive";
+/* purgecss end ignore */

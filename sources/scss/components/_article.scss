@@ -1,0 +1,257 @@
+article {
+    margin-bottom: 2rem;
+
+    a > h2 {
+        font-weight: 700;
+        font-size: 1.4rem;
+        margin: 0px;
+    }
+
+    .meta {
+        display: flex;
+        align-items: center;
+        margin: 0.5rem 0px 0.8rem 0px;
+        font-size: 0.9rem;
+        font-weight: 600;
+
+        img {
+            margin: 0px 0.4rem 0px 0px;
+            border-radius: 100%;
+            max-height: 25px;
+            max-width: 25px;
+        }
+
+        span, .category, .sep, .time {
+            display: none;
+        }
+
+        .time {
+            opacity: 0.3;
+        }
+    }
+
+    .image {
+        width: 100%;
+        height: 0px;
+        border-radius: 3px;
+        margin-top: 5px;
+        margin-bottom: 20px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        padding-top: 55%;
+    }
+
+    .excerpt {
+        font-family: $font-family-normal;
+        opacity: 0.8;
+    }
+
+    .content {
+        font-family: $font-family-normal;
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+
+        h2 {
+            font-size: 1.3rem;
+        }
+
+        ol, ul {
+            padding-inline-start: 19px;
+        }
+
+        blockquote {
+            box-shadow: $box-shadow;
+            background-color: white;
+            margin: 0px;
+            margin-bottom: 1rem;
+            padding: 10px 15px;
+            border-radius: 0px 10px 10px 0px;
+            border-left: $primary 2px solid;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        figure {
+            margin: 0;
+        }
+
+        .kg-bookmark-container {
+            box-shadow: $box-shadow;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 1.5rem;
+            border-radius: 7px 7px 7px 7px;
+        }
+
+        .kg-bookmark-thumbnail {
+            order: 1;
+            
+            img {
+                border-radius: 7px 7px 0px 0px;
+            }
+        }
+
+        .kg-bookmark-content {
+            order: 2;
+            padding: 20px 18px;
+
+            .kg-bookmark-title {
+                color: black;
+                font-family: 'Poppins', sans-serif;
+                font-weight: 600;
+            }
+
+            .kg-bookmark-description {
+                color: black;
+                opacity: 0.7;
+                font-size: 0.9rem;
+                overflow-y: hidden;
+                max-height: 42px;
+            }
+
+            .kg-bookmark-metadata {
+                display: flex;
+                margin-top: 0.5rem;
+                align-items: center;
+
+                .kg-bookmark-icon {
+                    width: 18px;
+                    height: 18px;
+                    margin-right: 0.3rem;
+                }
+
+                .kg-bookmark-publisher {
+                    color: black;
+                }
+            }
+        }
+
+        .kg-gallery-row {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 0.5rem;
+
+            .kg-gallery-image {
+                margin-bottom: 0.5rem;
+
+                img {
+                    height: 100%;
+                    border-radius: 3px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    article {
+        margin-bottom: 4rem;
+
+        a > h2 {
+            font-size: 1.6rem;
+        }
+
+        .meta {
+            margin: 0.5rem 0px 1.1rem 0px;
+            font-weight: 500;
+
+            span, .category, .sep, .time, a {
+                margin-right: 0.3rem;
+            }
+
+            span, .category {
+                display: inline;
+            }
+        }
+
+        .image {
+            width: unset;
+            padding-top: 62%;
+            margin: 0px -2rem 1.1rem -2rem;
+        }
+
+        .excerpt {
+            font-size: 1.1rem;
+        }
+        
+        .content {
+            font-size: 1.1rem;
+
+            // Ghost's bookmark
+            .kg-bookmark-container {
+                flex-direction: row;
+                // max-height: 135px;
+                max-width: 800px;
+            }
+
+            .kg-bookmark-thumbnail {
+                height: 100%;
+                overflow-y: hidden;
+                img {
+                    max-height: 100%;
+                    width: auto;
+                    border-radius: 7px 0px 0px 7px;
+                }
+            }
+
+            // Ghost's gallery
+            .kg-gallery-row {
+                flex-direction: row;
+
+                .kg-gallery-image {
+                    margin: 0px 0.3rem;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    article {
+        margin-bottom: 5rem;
+
+        a > h2 {
+            font-size: 1.8rem;
+        }
+
+        .image {
+            margin: 5px -3rem 20px -3rem;
+        }
+
+        .meta {
+            a, .sep, .time {
+                display: block;
+                margin-bottom: 0px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1366px) {
+    article {
+        margin-bottom: 6rem;
+
+        a > h2 {
+            font-size: 2rem;
+        }
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    article {
+        .image {
+            margin: 5px -4rem 20px -4rem;
+        }
+
+        .excerpt {
+            font-size: 1.2rem;
+        }
+    }
+}

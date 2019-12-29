@@ -1,25 +1,25 @@
 <article class="{{post_class}}" data-aos="fade-up">
-	<a href="{{url absolute='true'}}" class="post-title text-dark width-container"><h2>{{title}}</h2></a>
-	<div class="post-meta">
+	<a href="{{url absolute='true'}}" class="text-dark"><h2>{{title}}</h2></a>
+	<div class="meta">
 		{{#primary_author}}
-		{{#if profile_image}}<img class="post-authorimg" src="{{img_url profile_image absolute='true'}}" alt="{{name}}">{{/if}}
-		<p class="post-meta-authorcat"><a href="{{url absolute='true'}}">{{name}}</a>{{/primary_author}}
-		{{#if primary_tag}} on <a href="/tag/{{primary_tag.slug}}">{{primary_tag.name}}</a>{{/if}}</p>
-		<p class="post-meta-sep">•</p>
-		<p class="post-meta-datetime">{{date published_at format="MMMM DD, YYYY"}}</p>
+		{{#if profile_image}}<img class="img" src="{{img_url profile_image absolute='true'}}" alt="{{name}}">{{/if}}
+		<a href="{{url absolute='true'}}">{{name}}</a>{{/primary_author}}
+		{{#if primary_tag}} <span>on</span> <a class="category" href="/tag/{{primary_tag.slug}}">{{primary_tag.name}}</a>{{/if}}
+		<p class="sep">•</p>
+		<p class="time">{{date published_at format="MMMM DD, YYYY"}}</p>
 	</div>
 	{{#if feature_image}}
-	<div class="post-img" style="background-image: url('{{img_url feature_image size='featured'}}')"></div>
+	<div class="image" style="background-image: url('{{img_url feature_image size='featured'}}')"></div>
 	{{/if}}
 	
     {{#is "index"}}
-    <p class="post-excerpt">{{excerpt characters="340"}}</p>
-	<p><a href="{{url absolute='true'}}">Read More <i class="fas fa-long-arrow-alt-right"></i></a></p>
-	<hr>
+    <p class="excerpt">{{excerpt characters="340"}}</p>
+	{{!-- <p><a href="{{url absolute='true'}}">Read More <i class="fas fa-long-arrow-alt-right"></i></a></p> --}}
+	{{!-- <hr> --}}
     {{/is}}
 
     {{#is "post"}}
-        <div class="post-content">
+        <div class="content">
             {{content}}
         </div>
     {{/is}}
