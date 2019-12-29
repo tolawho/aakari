@@ -18,7 +18,7 @@ into the {body} of the default.hbs template --}}
 {{!-- Finish accessing the tag variables --}}
 {{/tag}}
 
-<main role="main" id="posts-section" data-aos="fade">
+<main role="main" id="posts-section" data-aos="fade" class="{{body_class}}">
 	<div id="articles" class="container">
 		{{!-- Loop through each blog post --}}
 		{{#foreach posts limit=@config.posts_per_page}}

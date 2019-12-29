@@ -150,6 +150,12 @@ article {
     }
 }
 
+.post-template {
+    article {
+        margin-bottom: 0px !important;
+    }
+}
+
 @media screen and (min-width: 768px) {
     article {
         margin-bottom: 4rem;
@@ -182,7 +188,7 @@ article {
         }
         
         .content {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
 
             // Ghost's bookmark
             .kg-bookmark-container {
