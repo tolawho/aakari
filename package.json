@@ -68,6 +68,7 @@
         "gulp-size": "^3.0.0",
         "gulp-uglify": "^3.0.1",
         "gulp-zip": "^5.0.1",
-        "node-sass": "^4.10.0"
+        "node-sass": "^4.10.0",
+        "tailwindcss": "^1.1.4"
     }
 }

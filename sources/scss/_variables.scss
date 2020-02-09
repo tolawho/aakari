@@ -3,9 +3,12 @@ $font-family-base: 'Poppins', sans-serif;
 $font-family-normal: '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', '"Helvetica Neue"', 'Arial', '"Noto Sans"', 'sans-serif', '"Apple Color Emoji"', '"Segoe UI Emoji"', '"Segoe UI Symbol"', '"Noto Color Emoji"';
 
 // Shadows
-$box-shadow: -1px 19px 26px -11px rgba(0,0,0,0.1);
+$box-shadow: 0 1px 1.1px rgba(0, 0, 0, 0.009), 0 2.5px 2.8px rgba(0, 0, 0, 0.013), 0 5.1px 5.7px rgba(0, 0, 0, 0.017), 0 10.6px 11.7px rgba(0, 0, 0, 0.021), 0 29px 32px rgba(0, 0, 0, 0.03);
+// $shadow-hover: 0 3.3px 5.3px rgba(0, 0, 0, 0.02), 0 11.2px 17.9px rgba(0, 0, 0, 0.03), 0 50px 80px rgba(0, 0, 0, 0.05);
 
 // Colors
 $light: #FBFDFF;
 $primary: #006CFF;
 $secondary: #000000;
+$blue: #03A9F4;
+$text-color: #455A64;
